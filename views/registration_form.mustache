@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+
+    <!-- Display validation errors -->
+    {{#errors}}
+    <div class="alert alert-danger">
+        <p>{{.}}</p> <!-- Display each error -->
+    </div>
+    {{/errors}}
+
+    <!-- Registration form -->
+    <form action="/register" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" value="{{data.username}}">
+        <div></div>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="{{data.email}}">
+        <div></div>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name" value="{{data.first_name}}">
+        <div></div>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name" value="{{data.last_name}}">
+        <div></div>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <div></div>
+
+        <label for="password_confirmation">Confirm Password:</label>
+        <input type="password" name="password_confirmation" id="password_confirmation">
+        <div></div>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

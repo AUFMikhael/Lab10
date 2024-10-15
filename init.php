@@ -29,6 +29,18 @@ $db = new DatabaseConnection(
 );
 $conn = $db->connect();
 
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_SERVER['REQUEST_URI'] == '/registration-form') {
+    // Show the registration form
+    $controller = new App\Controllers\RegistrationController();
+    $controller->showForm();
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_SERVER['REQUEST_URI'] == '/register') {
+    // Handle the registration form submission
+    $controller = new App\Controllers\RegistrationController();
+    $controller->register();
+}
+
 // /**
 //  * Helper functions
 //  */

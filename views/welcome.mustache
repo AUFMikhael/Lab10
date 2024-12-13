@@ -1,0 +1,23 @@
+<h1>Welcome to IPT10</h1>
+<p>Welcome, {{user_name}}!</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Complete Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#users}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{complete_name}}</td>
+            <td>{{email}}</td>
+        </tr>
+        {{/users}}
+    </tbody>
+</table>
+
+<a href="/logout">Logout</a>
